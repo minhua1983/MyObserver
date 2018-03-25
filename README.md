@@ -1,22 +1,10 @@
-# 自动编译
-这是一个用于自动编译的demo
+# 观察者模式
+这是一个观察者模式的demo
 
 ## 项目环境
 * .net framework 4.5.2
 
-## 所需额外加载nuget包
-* Microsoft.CodeAnalysis 
-* Microsoft.VisualStudio.TextTemplating
-
-## 项目结构
-* AutoComplier.Core，winform主程序，核心程序，读取T4模版文件内容（基于AutoComplier.UICore获取数据库中表结构）并执行（生成对应的cs类文件），最后结合MSBuild来自动编译AutoComplier.UI项目（即通过本项目程序来编译，而非在VS中执行编译）
-* AutoComplier.XCore，控制台主程序（用于最基本的核心功能测试，在本解决方案中实际被AutoComplier.Core项目所替换，所以目前用不着）
-* AutoComplier.UI，需要生成的网站
-* AutoComplier.UICore 帮助类库，用于放映数据库中表结构的项目，
-
-## MSBuild官方文档
-[MSBuild官方文档](https://msdn.microsoft.com/zh-cn/library/0k6kkbsd.aspx)
-MSBuild是对.net程序做持续集成的核心工具，对持续集成感兴趣的话，可以看一下MSBuild（编译工具）和Jenkins（持续集成工具）。
-
-## 项目灵感
-这种自动编译的demo，可以用于数据库中新建了某些表，而对这些表又需要生成一些实体类，基本的数据访问操作类，基本的业务逻辑，基本的访问接口时，可以通过这个程序来生成，并自动发布网站。
+## 相关说明
+* MyObserver.Core\EventDemo 一个基于.net事件的MyComponent/MyMonitor之间的demo。
+* MyObserver.Core\ObserverDemo 一个基于java事件监听者的demo，最好能理解这个demo，因为.net的事件隐藏了是如何循环通知监听者列表的，因此不好理解.net下的事件，如果能看懂这个demo，那么就可以明白.net事件中哪些部分被隐藏了。
+* MyObserver.Core\PipelineDemo 一个基于.net事件的MyHttpApplication/MyHttpModule之间的demo，它和第一个demo很像，但是这个demo基本反映了管道处理的逻辑，最好也能看懂它，它有助于帮你理解asp.net的管道是如何处理请求的。
